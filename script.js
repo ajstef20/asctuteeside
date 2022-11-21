@@ -20,3 +20,8 @@ function subjects() {
       }
     }
   }
+
+function selectedTutor() {
+  let box = document.getElementsByClassName("entry");
+  box.className = "entry selected";
+}

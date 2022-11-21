@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>ASC calendar view</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body> 
+    <div class="body-frame"> 
+        <div class = "top_menu">
+            <div class = "top_menu_logo"> 
+                <!--<img src="ur_shield.png" class="logo_main_page">-->
+            </div>
+            <div class="top_menu_buttons"> 
+                Calendar
+            </div>
+            <a href="index.html"> <div class="top_menu_buttons"> 
+                Logout
+            </div>
+            </a>
+        </div> 
+
+        <div class = "header"> 
+            Calendar
+        </div>
+        <div class="instructions"> 
+            Welcome! Let's get you scheduled to meet with a tutor. 
+            Please select a tutor you'd like to meet with.
+        </div>
+        <div class="dropdown">
+            <button onclick="subjects()" class="dropbtn">Subjects</button>
+            <div id="subjects" class="dropdown-content">
+              <a href="#">Accounting</a>
+              <a href="#">Biology</a>
+              <a href="#">Computer Science</a>
+              <a href="#">Chemistry</a>
+              <a href="#">Economics</a>
+              <a href="#">English</a>
+              <a href="#">Mathematics</a>           
+              <a href="#">Psychology</a> 
+              <a href="#">Spanish</a>    
+            </div>
+          </div>
+          <div class="dropdown">
+            <button onclick="courses()" class="dropbtn">Courses</button>
+            <div id="courses" class="dropdown-content">
+              <a href="calendar.html">ACCT 100</a>
+              <a href="#">ACCT 201</a>
+              <a href="#">ACCT 210</a>
+              <a href="#">ACCT 256</a>
+              <a href="#">ACCT 300</a>
+              <a href="#">ACCT 303</a>
+              <a href="#">ACCT 325</a>           
+              <a href="#">ACCT 330</a> 
+              <a href="#">ACCT 345</a>    
+            </div>
+          </div>
+          <!--- from https://www.bootdey.com/snippets/view/time-table#css -->
+          <div class="container">
+            <div class="timetable-img text-center">
+                <img src="img/content/timetable.png" alt="">
+            </div>
+            <div class="table-responsive">
+                <table class="table table-bordered text-center">
+                    <thead>
+                        <tr class="bg-blue text-white">
+                            <th class="text-uppercase">Time
+                            </th>
+                            <th class="text-uppercase">Monday</th>
+                            <th class="text-uppercase">Tuesday</th>
+                            <th class="text-uppercase">Wednesday</th>
+                            <th class="text-uppercase">Thursday</th>
+                            <th class="text-uppercase">Friday</th>
+                            <th class="text-uppercase">Saturday</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="align-middle">09:00am</td>
+                            <td class="entry">
+                                <span class="bg-red padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16 xs-font-size13">Sam</span>
+                                <div class="margin-10px-top font-size14">9:00-10:00</div>
+                            </td>
+                            <td onclick="selectedTutor()">
+                                <span class="bg-red padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Jack</span>
+                                <div class="margin-10px-top font-size14">9:00-10:00</div>
+                            </td>
+
+                            <td>
+                                <span class="bg-red padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Sam</span>
+                                <div class="margin-10px-top font-size14">9:00-10:00</div>
+                            </td>
+                            <td>
+                                <span class="bg-red padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Sandy</span>
+                                <div class="margin-10px-top font-size14">9:00-10:00</div>
+                            </td>
+                            <td class="bg-light-gray"></td>
+                            <td class="bg-light-gray"></td>
+                        </tr>
+
+                        <tr>
+                            <td class="align-middle">10:00am</td>
+                            <td>
+                                <span class="bg-red padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Mason</span>
+                                <div class="margin-10px-top font-size14">10:00-11:00</div>
+                            </td>
+                            <td class="bg-light-gray"></td>
+                            <td>
+                                <span class="bg-red padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Abby</span>
+                                <div class="margin-10px-top font-size14">10:00-11:00</div>
+                            </td>
+                            <td>
+                                <span class="bg-red padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Yang</span>
+                                <div class="margin-10px-top font-size14">10:00-11:00</div>
+                            </td>
+                            <td>
+                                <span class="bg-red padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Mason</span>
+                                <div class="margin-10px-top font-size14">10:00-11:00</div>
+                            </td>
+                            <td class="bg-light-gray">
+
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="align-middle">11:00am</td>
+                            <td class="bg-light-gray"></td>
+                            <td>
+                                <span class="bg-red padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Jack</span>
+                                <div class="margin-10px-top font-size14">11:00-12:00</div>
+                            </td>
+                            <td>
+                                <span class="bg-red padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Sandy</span>
+                                <div class="margin-10px-top font-size14">11:00-12:00</div>
+                            </td>
+                            <td class="bg-light-gray"></td>
+                            <td>
+                                <span class="bg-red padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Emma</span>
+                                <div class="margin-10px-top font-size14">11:00-12:00</div>
+                            </td>
+                            <td>
+                                <span class="bg-red padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Frank</span>
+                                <div class="margin-10px-top font-size14">11:00-12:00</div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="align-middle">12:00pm</td>
+                            <td class="bg-light-gray">
+
+                            </td>
+                            <td class="bg-light-gray"></td>
+                            <td>
+                                <span class="bg-red padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Fabian</span>
+                                <div class="margin-10px-top font-size14">12:00-1:00</div>
+                            </td>
+                            <td>
+                                <span class="bg-red padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Emma</span>
+                                <div class="margin-10px-top font-size14">12:00-1:00</div>
+                            </td>
+                            <td class="bg-light-gray">
+
+                            </td>
+                            <td>
+                                <span class="bg-red padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Frank</span>
+                                <div class="margin-10px-top font-size14">12:00-1:00</div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="align-middle">01:00pm</td>
+                            <td>
+                                <span class="bg-red padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Liam</span>
+                                <div class="margin-10px-top font-size14">1:00-2:00</div>
+                            </td>
+                            <td>
+                                <span class="bg-red padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Jack</span>
+                                <div class="margin-10px-top font-size14">1:00-2:00</div>
+                            </td>
+                            <td class="bg-light-gray">
+
+                            </td>
+                            <td>
+                                <span class="bg-red padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Fabian</span>
+                                <div class="margin-10px-top font-size14">1:00-2:00</div>
+                            </td>
+                            <td>
+                                <span class="bg-red padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Sandy</span>
+                                <div class="margin-10px-top font-size14">1:00-2:00</div>
+                            </td>
+                            <td class="bg-light-gray"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    <button type="submit" class="bg-red text-white">Submit</button>
+    </div>
+        
+    <script src="script.js"></script>         
+</body>
+</html>
