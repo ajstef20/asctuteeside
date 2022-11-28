@@ -53,7 +53,7 @@ function subjects() {
 // adjust course names based on the subject selected
 function populate(e){
   //s2.innerHTML = "";
-  console.log("ss");
+  
   
   let item = e.target;
   if(item.textContent == "Accounting"){
@@ -91,6 +91,7 @@ function populate(e){
     var optionArray = ["span100|SPAN 100", "span200|SPAN 200", "span210|SPAN 210","span235|SPAN 235", "span250|SPAN 250", "span310|SPAN 310", "span323|SPAN 323", "span370|SPAN 370"];
     
   }
+  course_listing.innerHTML="";
   for(var option in optionArray){ 
     
     var pair = optionArray[option].split("|");
