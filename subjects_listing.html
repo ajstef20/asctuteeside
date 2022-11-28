@@ -5,17 +5,16 @@
     <title>ASC subject listing</title>
 
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
 <body> 
     <div class="body-frame"> 
         <div class = "top_menu">
             <div class = "top_menu_logo"> 
-                <img src="ur_shield.svg" class = "logo_shield">
+                <img src=ur_shield.png” class = "logo_main_page">
             </div>
-            <a href="calendar.html"><div class="top_menu_buttons"> 
+            <div class="top_menu_buttons"> 
                 Calendar
-            </div></a> 
+            </div>
             <a href="index.html"> <div class="top_menu_buttons"> 
                 Logout
             </div>
@@ -23,19 +22,16 @@
         </div> 
 
         <div class = "header"> 
-            Subject Listing 
+            Subject Listing
         </div>
         <div class="instructions"> 
             Welcome! Let's get you scheduled to meet with a tutor. 
             Please select a subject you’d like help with.
         </div>
         <div class="dropdown">
-            <div class = "icon">
-            <button  onclick="subjects()" class="dropbtn">Subjects <span class="material-symbols-outlined">
-                expand_more
-                </span></button>
+            <button onclick="subjects()" class="dropbtn">Subjects</button>
             <div id="subjects" class="dropdown-content">
-              <a href="#">Accounting</a>
+              <a href="couses_listing.html">Accounting</a>
               <a href="#">Biology</a>
               <a href="#">Computer Science</a>
               <a href="#">Chemistry</a>
@@ -44,15 +40,6 @@
               <a href="#">Mathematics</a>           
               <a href="#">Psychology</a> 
               <a href="#">Spanish</a>    
-            </div>
-        </div> 
-        <div class = "icon">
-            <button id = "courses" class="dropbtn">Courses 
-                <span class="material-symbols-outlined">expand_more</span>
-            </button>
-        </div>
-        </div>
-        
             </div>
           </div>
 
