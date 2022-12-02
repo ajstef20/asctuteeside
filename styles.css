@@ -15,7 +15,7 @@ body{
     margin: 2em;
     background-color: white;
     position: relative;
-    height:48em;
+    height: 50em;
     text-align: center;
     padding: 2em;
 }
@@ -34,6 +34,7 @@ body{
     width:25%;
     display:flex;
     padding-bottom: 30px;
+    justify-content: left;
 }
 
 .submit_btn{
@@ -101,8 +102,8 @@ input{
   
 
   .dropdown {
-    margin-top: 1em;
-    width:100%;
+    width: 56%;
+    margin-left: 285px;
   }
   
 
@@ -170,7 +171,7 @@ button{
     color: white;
   }
 
-  /* from https://www.bootdey.com/snippets/view/time-table#css */
+  /* from https://www.bootdey.com/snippets/view/time-table#css, with some modifications */
 
   .container {
     display: flex;
@@ -248,4 +249,8 @@ button{
   .time {
     margin-top: 10px;
     font-size: 14px;
+  }
+
+  .entry:hover {
+    border: 1px solid black;
   }

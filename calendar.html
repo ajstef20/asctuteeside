@@ -5,12 +5,13 @@
     <title>ASC calendar view</title>
 
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
 <body> 
     <div class="body-frame"> 
         <div class = "top_menu">
             <div class = "top_menu_logo"> 
-                <!--<img src="ur_shield.png" class="logo_main_page">-->
+                <!--<img src="ur_shield.png" class = "logo_main_page">-->
             </div>
             <div class="top_menu_buttons"> 
                 Calendar
@@ -28,38 +29,36 @@
             Welcome! Let's get you scheduled to meet with a tutor. 
             Please select a tutor you'd like to meet with.
         </div>
+
         <div class="dropdown">
-            <button onclick="subjects()" class="dropbtn">Subjects</button>
+            <div class = "icon">
+            <button  onclick="subjects()" class="dropbtn">Subjects <span class="material-symbols-outlined">
+                expand_more
+                </span></button>
             <div id="subjects" class="dropdown-content">
-              <a href="#">Accounting</a>
-              <a href="#">Biology</a>
-              <a href="#">Computer Science</a>
-              <a href="#">Chemistry</a>
-              <a href="#">Economics</a>
-              <a href="#">English</a>
-              <a href="#">Mathematics</a>           
-              <a href="#">Psychology</a> 
-              <a href="#">Spanish</a>    
+              <a id = "acct" href="#">Accounting</a>
+              <a id = "biol" href="#">Biology</a>
+              <a id = "cs" href="#">Computer Science</a>
+              <a id = "chem" href="#">Chemistry</a>
+              <a id = "econ" href="#">Economics</a>
+              <a id = "eng" href="#">English</a>
+              <a id = "math" href="#">Mathematics</a>           
+              <a id = "psyc" href="#">Psychology</a> 
+              <a id = "span" href="#">Spanish</a>    
             </div>
-          </div>
-          <div class="dropdown">
-            <button onclick="courses()" class="dropbtn">Courses</button>
-            <div id="courses" class="dropdown-content">
-              <a href="calendar.html">ACCT 100</a>
-              <a href="#">ACCT 201</a>
-              <a href="#">ACCT 210</a>
-              <a href="#">ACCT 256</a>
-              <a href="#">ACCT 300</a>
-              <a href="#">ACCT 303</a>
-              <a href="#">ACCT 325</a>           
-              <a href="#">ACCT 330</a> 
-              <a href="#">ACCT 345</a>    
-            </div>
-          </div>
-          <!--- from https://www.bootdey.com/snippets/view/time-table#css -->
+        </div> 
+        <div class = "icon">
+            <button id = "courses" class="dropbtn">Courses 
+                <span class="material-symbols-outlined">expand_more</span>
+            </button>
+            <div id="course-listing" class="dropdown-content-courses"></div>
+        </div>
+        </div>
+
+          <!--- from https://www.bootdey.com/snippets/view/time-table#css, with some modifications -->
           <div class="container">
             <div class="timetable-img text-center">
-                <img src="img/content/timetable.png" alt="">
+                <!--<img src="img/content/timetable.png" alt="">-->
             </div>
             <div class="table-responsive">
                 <table class="table table-bordered text-center">
@@ -78,20 +77,20 @@
                     <tbody>
                         <tr>
                             <td class="align-middle">09:00am</td>
-                            <td class="entry">
+                            <td class="entry" id="slot1">
                                 <span class="event">Sam</span>
                                 <div class="time">9:00-10:00</div>
                             </td>
-                            <td>
+                            <td class="entry" id="slot2">
                                 <span class="event">Jack</span>
                                 <div class="time">9:00-10:00</div>
                             </td>
 
-                            <td>
+                            <td class="entry" id="slot3">
                                 <span class="event">Sam</span>
                                 <div class="time">9:00-10:00</div>
                             </td>
-                            <td>
+                            <td class="entry" id="slot4">
                                 <span class="event">Sandy</span>
                                 <div class="time">9:00-10:00</div>
                             </td>
@@ -101,20 +100,20 @@
 
                         <tr>
                             <td class="align-middle">10:00am</td>
-                            <td>
+                            <td class="entry" id="slot5">
                                 <span class="event">Mason</span>
                                 <div class="time">10:00-11:00</div>
                             </td>
                             <td class="bg-light-gray"></td>
-                            <td>
+                            <td class="entry" id="slot6">
                                 <span class="event">Abby</span>
                                 <div class="time">10:00-11:00</div>
                             </td>
-                            <td>
+                            <td class="entry" id="slot7">
                                 <span class="event">Yang</span>
                                 <div class="time">10:00-11:00</div>
                             </td>
-                            <td>
+                            <td class="entry" id="slot8">
                                 <span class="event">Mason</span>
                                 <div class="time">10:00-11:00</div>
                             </td>
@@ -126,20 +125,20 @@
                         <tr>
                             <td class="align-middle">11:00am</td>
                             <td class="bg-light-gray"></td>
-                            <td>
+                            <td class="entry" id="slot9">
                                 <span class="event">Jack</span>
                                 <div class="time">11:00-12:00</div>
                             </td>
-                            <td>
+                            <td class="entry" id="slot10">
                                 <span class="event">Sandy</span>
                                 <div class="time">11:00-12:00</div>
                             </td>
                             <td class="bg-light-gray"></td>
-                            <td>
+                            <td class="entry" id="slot11">
                                 <span class="event">Emma</span>
                                 <div class="time">11:00-12:00</div>
                             </td>
-                            <td>
+                            <td class="entry" id="slot12">
                                 <span class="event">Frank</span>
                                 <div class="time">11:00-12:00</div>
                             </td>
@@ -151,18 +150,18 @@
 
                             </td>
                             <td class="bg-light-gray"></td>
-                            <td>
+                            <td class="entry" id="slot13">
                                 <span class="event">Fabian</span>
                                 <div class="time">12:00-1:00</div>
                             </td>
-                            <td>
+                            <td class="entry" id="slot14">
                                 <span class="event">Emma</span>
                                 <div class="time">12:00-1:00</div>
                             </td>
                             <td class="bg-light-gray">
 
                             </td>
-                            <td>
+                            <td class="entry" id="slot15">
                                 <span class="event">Frank</span>
                                 <div class="time">12:00-1:00</div>
                             </td>
@@ -170,22 +169,22 @@
 
                         <tr>
                             <td class="align-middle">01:00pm</td>
-                            <td>
+                            <td class="entry" id="slot16">
                                 <span class="event">Liam</span>
                                 <div class="time">1:00-2:00</div>
                             </td>
-                            <td>
+                            <td class="entry" id="slot17">
                                 <span class="event">Jack</span>
                                 <div class="time">1:00-2:00</div>
                             </td>
                             <td class="bg-light-gray">
 
                             </td>
-                            <td>
+                            <td class="entry" id="slot18">
                                 <span class="event">Fabian</span>
                                 <div class="time">1:00-2:00</div>
                             </td>
-                            <td>
+                            <td class="entry" id="slot19">
                                 <span class="event">Sandy</span>
                                 <div class="time">1:00-2:00</div>
                             </td>
@@ -195,9 +194,12 @@
                 </table>
             </div>
         </div>
-    <button type="submit" class="bg-red text-white">Submit</button>
+    <div> 
+        <a href="" class="submit_btn" id="final-submit">SUBMIT</a>
     </div>
-        
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="script.js"></script>         
 </body>
 </html>

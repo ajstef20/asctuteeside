@@ -111,5 +111,75 @@ function selectedTutor() {
   box.className = "entry selected";
 }
 
+// --------------------- BEGIN calendar section ---------------------
 
+let slot1 = document.getElementById('slot1');
+let slot2 = document.getElementById('slot2');
+let slot3 = document.getElementById('slot3');
+let slot4 = document.getElementById('slot4');
+let slot5 = document.getElementById('slot5');
+let slot6 = document.getElementById('slot6');
+let slot7 = document.getElementById('slot7');
+let slot8 = document.getElementById('slot8');
+let slot9 = document.getElementById('slot9');
+let slot10 = document.getElementById('slot10');
+let slot11 = document.getElementById('slot11');
+let slot12 = document.getElementById('slot12');
+let slot13 = document.getElementById('slot13');
+let slot14 = document.getElementById('slot14');
+let slot15 = document.getElementById('slot15');
+let slot16 = document.getElementById('slot16');
+let slot17 = document.getElementById('slot17');
+let slot18 = document.getElementById('slot18');
+let slot19 = document.getElementById('slot19');
 
+let readyToSubmit = document.getElementById("final-submit");
+
+// keep track of what has been selected so far
+let selected = [];
+
+function selectBox() {
+  for (var i = 0; i < selected.length; i++) {
+    var current = document.getElementById(selected[i]);
+    current.style.border = "1px solid #dee2e6";
+  }
+  selected.push(this.id);
+  this.style.border = "2px solid black";
+}
+
+function confirmation() {
+  if (selected.length == 0) {
+    alert("You must select a time/tutor in order to make an appointment!");
+  } else {
+    var appointment = document.getElementById(selected[0]);
+    var apptInner = appointment.innerHTML;
+    if (confirm("Press a button!") == true) {
+       text = "You pressed OK!";
+     } else {
+       text = "You canceled!";
+     }
+  }
+}
+
+// event listeners for each box
+slot1.addEventListener('click', function() { selectBox.call(slot1) });
+slot2.addEventListener('click', function() { selectBox.call(slot2) });
+slot3.addEventListener('click', function() { selectBox.call(slot3) });
+slot4.addEventListener('click', function() { selectBox.call(slot4) });
+slot5.addEventListener('click', function() { selectBox.call(slot5) });
+slot6.addEventListener('click', function() { selectBox.call(slot6) });
+slot7.addEventListener('click', function() { selectBox.call(slot7) });
+slot8.addEventListener('click', function() { selectBox.call(slot8) });
+slot9.addEventListener('click', function() { selectBox.call(slot9) });
+slot10.addEventListener('click', function() { selectBox.call(slot10) });
+slot11.addEventListener('click', function() { selectBox.call(slot11) });
+slot12.addEventListener('click', function() { selectBox.call(slot12) });
+slot13.addEventListener('click', function() { selectBox.call(slot13) });
+slot14.addEventListener('click', function() { selectBox.call(slot14) });
+slot15.addEventListener('click', function() { selectBox.call(slot15) });
+slot16.addEventListener('click', function() { selectBox.call(slot16) });
+slot17.addEventListener('click', function() { selectBox.call(slot17) });
+slot18.addEventListener('click', function() { selectBox.call(slot18) });
+slot19.addEventListener('click', function() { selectBox.call(slot19) });
+
+readyToSubmit.addEventListener('click', confirmation);
