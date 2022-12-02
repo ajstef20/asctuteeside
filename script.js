@@ -1,3 +1,12 @@
+let firstName = document.getElementById("first-name");
+let lastName = document.getElementById("last-name");
+let userEmail = document.getElementById("uni-email");
+
+function saveUserData() {
+  firstName = document.getElementById("first-name").value;
+  lastName = document.getElementById("last-name").value;
+  userEmail = document.getElementById("uni-email").value;
+}
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
 let s1 = document.getElementById('subjects');
@@ -132,6 +141,7 @@ let slot16 = document.getElementById('slot16');
 let slot17 = document.getElementById('slot17');
 let slot18 = document.getElementById('slot18');
 let slot19 = document.getElementById('slot19');
+let slot20 = document.getElementById('slot20');
 
 let readyToSubmit = document.getElementById("final-submit");
 
@@ -147,17 +157,32 @@ function selectBox() {
   this.style.border = "2px solid black";
 }
 
+function sendEmail(tutor, apptTime, apptDay) {
+  Email.send({
+    Host : "smtp.mailtrap.io",
+    Username : "a17337df37df06",
+    Password : "673a5656f12a2c",
+    To : "angela.stefanovska@richmond.edu",
+    From : "angela.stefanovska@richmond.edu",
+    Subject : "Thank you for signing up for ASC Tutoring!",
+    Body : `<html>Dear ${firstName}, You are signed up to meet with ${tutor} on ${apptTime} at ${apptDay}.
+        Please email asc@richmond.edu if you have any questions.</html>`
+  }).then(message => alert("mail sent successfully")); 
+}
+
 function confirmation() {
   if (selected.length == 0) {
     alert("You must select a time/tutor in order to make an appointment!");
   } else {
-    var appointment = document.getElementById(selected[0]);
-    var apptInner = appointment.innerHTML;
-    if (confirm("Press a button!") == true) {
-       text = "You pressed OK!";
-     } else {
-       text = "You canceled!";
-     }
+    let appointment = document.getElementById(selected[0]);
+    let day = $(appointment).find(".day-of-week").html();
+    let name = $(appointment).find(".event").html();
+    let time = $(appointment).find(".time").html();
+    if (confirm(`You are about to make an appointment with ${name} at ${time} on ${day}. Are you sure you'd like to schedule this?`) == true) {
+      console.log("You are here!");  
+      sendEmail(name, time, day);
+      console.log("Email has been sent!");
+    }
   }
 }
 
@@ -181,5 +206,6 @@ slot16.addEventListener('click', function() { selectBox.call(slot16) });
 slot17.addEventListener('click', function() { selectBox.call(slot17) });
 slot18.addEventListener('click', function() { selectBox.call(slot18) });
 slot19.addEventListener('click', function() { selectBox.call(slot19) });
+slot20.addEventListener('click', function() { selectBox.call(slot20) });
 
 readyToSubmit.addEventListener('click', confirmation);

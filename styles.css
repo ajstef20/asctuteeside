@@ -75,8 +75,6 @@ input{
 
 }
 
-
-
 .instructions{
     margin-top:2em;
 }
@@ -98,8 +96,8 @@ input{
   
 
   .dropdown {
-    width: 56%;
-    margin-left: 285px;
+    width: 57%;
+    margin-left: 280px;
   }
   
 
@@ -249,4 +247,8 @@ button{
 
   .entry:hover {
     border: 1px solid black;
+  }
+
+  .day-of-week {
+    display: none;
   }
