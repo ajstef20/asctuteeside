@@ -180,7 +180,7 @@ function confirmation() {
   if (selected.length == 0) {
     alert("You must select a time/tutor in order to make an appointment!");
   } else {
-    let appointment = document.getElementById(selected[0]);
+    let appointment = document.getElementById(selected[selected.length - 1]);
     let day = $(appointment).find(".day-of-week").html();
     let name = $(appointment).find(".event").html();
     let time = $(appointment).find(".time").html();
