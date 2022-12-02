@@ -6,6 +6,12 @@ function saveUserData() {
   firstName = document.getElementById("first-name").value;
   lastName = document.getElementById("last-name").value;
   userEmail = document.getElementById("uni-email").value;
+
+  if (firstName.length == 0 || lastName.length == 0 || userEmail.length == 0) {
+    alert("Please fill out all required fields!");
+  } else {
+    window.location.href = "subjects_listing.html";
+  }
 }
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
@@ -162,12 +168,12 @@ function sendEmail(tutor, apptTime, apptDay) {
     Host : "smtp.mailtrap.io",
     Username : "a17337df37df06",
     Password : "673a5656f12a2c",
-    To : "angela.stefanovska@richmond.edu",
+    To : userEmail,
     From : "angela.stefanovska@richmond.edu",
     Subject : "Thank you for signing up for ASC Tutoring!",
     Body : `<html>Dear ${firstName}, You are signed up to meet with ${tutor} on ${apptTime} at ${apptDay}.
         Please email asc@richmond.edu if you have any questions.</html>`
-  }).then(message => alert("mail sent successfully")); 
+  }); 
 }
 
 function confirmation() {
@@ -178,10 +184,10 @@ function confirmation() {
     let day = $(appointment).find(".day-of-week").html();
     let name = $(appointment).find(".event").html();
     let time = $(appointment).find(".time").html();
-    if (confirm(`You are about to make an appointment with ${name} at ${time} on ${day}. Are you sure you'd like to schedule this?`) == true) {
-      console.log("You are here!");  
+    if (confirm(`You are about to make an appointment with ${name} at ${time} on ${day}. Are you sure you'd like to schedule this?`) == true) { 
       sendEmail(name, time, day);
-      console.log("Email has been sent!");
+      alert("A confirmation email has been sent to your inbox! Press close to take you back to login.");
+      window.location.href = "index.html";
     }
   }
 }
